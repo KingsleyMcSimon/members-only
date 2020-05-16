@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:todo Style/Documentation
 class AddFieldsToUsers < ActiveRecord::Migration[6.0]
   def change
     add_column :users, :name, :string
@@ -7,3 +8,4 @@ class AddFieldsToUsers < ActiveRecord::Migration[6.0]
     add_index :users, :username, unique: true
   end
 end
+# rubocop:enable Style/Documentation

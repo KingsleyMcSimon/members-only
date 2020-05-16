@@ -1,28 +1,19 @@
 # frozen_string_literal: true
 
-
-
-class CaptsController < ApplicationController
-
+class CaptsController < ApplicationController # rubocop:todo Style/Documentation
   before_action :set_capt, only: %i[show edit update destroy]
 
   before_action :authenticate_user!, except: %i[index show]
-
-
 
   # GET /capts
 
   # GET /capts.json
 
   def index
-
     @capts = Capt.all.order('created_at DESC')
 
     @capt = Capt.new
-
   end
-
-
 
   # GET /capts/1
 
@@ -30,36 +21,24 @@ class CaptsController < ApplicationController
 
   def show; end
 
-
-
   # GET /capts/new
 
   def new
-
     @capt = current_user.capts.build
-
   end
-
-
 
   # GET /capts/1/edit
 
   def edit; end
 
-
-
   # POST /capts
 
   # POST /capts.json
 
-  def create
-
+  def create # rubocop:todo Metrics/AbcSize
     @capt = current_user.capts.build(capt_params)
 
-
-
     respond_to do |format|
-
       if @capt.save
 
         format.html { redirect_to root_path, notice: 'Capt was successfully created.' }
@@ -73,21 +52,15 @@ class CaptsController < ApplicationController
         format.json { render json: @capt.errors, status: :unprocessable_entity }
 
       end
-
     end
-
   end
-
-
 
   # PATCH/PUT /capts/1
 
   # PATCH/PUT /capts/1.json
 
   def update
-
     respond_to do |format|
-
       if @capt.update(capt_params)
 
         format.html { redirect_to @capt, notice: 'Capt was successfully updated.' }
@@ -101,54 +74,34 @@ class CaptsController < ApplicationController
         format.json { render json: @capt.errors, status: :unprocessable_entity }
 
       end
-
     end
-
   end
-
-
 
   # DELETE /capts/1
 
   # DELETE /capts/1.json
 
   def destroy
-
     @capt.destroy
 
     respond_to do |format|
-
       format.html { redirect_to capts_url, notice: 'Capt was successfully destroyed.' }
 
       format.json { head :no_content }
-
     end
-
   end
 
-
-
   private
-
-
 
   # Use callbacks to share common setup or constraints between actions.
 
   def set_capt
-
     @capt = Capt.find(params[:id])
-
   end
-
-
 
   # Only allow a list of trusted parameters through.
 
   def capt_params
-
     params.require(:capt).permit(:capt)
-
   end
-
 end
-
