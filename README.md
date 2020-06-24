@@ -1,6 +1,6 @@
 # Name of Project:
 
-Twitter like application called Capter!
+Twitter like application called Members-Only!
 
 # Table of contents:
 
