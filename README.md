@@ -16,7 +16,7 @@ Twitter like application called Members-Only!
 
 # About The Project:
 
-This project is all about building a web application that looks like the popular social media application called twitter. But i called it Capter. It has some basic functionality of the original twitter where a new user can sign up, an existing user can sign in and send a tweet or what i called a capt. A user can not see a conversation and the user who posted except after signin in. A user can as well edit a conversation, update or have it deleted.
+This project is all about building a web application that looks like the popular social media application called twitter. It has some basic functionality of the original twitter where a new user can sign up, an existing user can sign in and send a tweet. A user can not see a conversation and the user who posted except after signin in. A user can as well edit a conversation, update or have it deleted.
 
 # Built With:
 
@@ -63,7 +63,7 @@ Distributed under the MIT Licence. See [Licence](https://opensource.org/licenses
 
 # Link To The Project On Github:
 
-[Project On Github](https://github.com/KingsleyMcSimon/capterApp)
+[Project On Github](https://github.com/KingsleyMcSimon/members-only)
 
 # What Was Learnt During The Project:
 
@@ -76,3 +76,5 @@ I used this project to add to my knowledge of the Ruby On Rails web technology u
 [Web-Crunch video 2](https://www.youtube.com/watch?v=ZxkbFOe3lRY) and
 
 [Web-Crunch video 3](https://www.youtube.com/watch?v=V4h7-hR_WME) was very handy in putting this application together.
+
+Also as many that supported us to see to this project, many thanks.
