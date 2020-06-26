@@ -20,7 +20,7 @@ gem 'puma', '~> 4.1'
 
 # Use SCSS for stylesheets
 
-gem 'rubocop'
+gem 'rubocop', '~> 0.86.0', require: false
 
 gem 'bootstrap-sass', '~> 3.4.1'
 
