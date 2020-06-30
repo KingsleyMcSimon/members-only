@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+# rubocop:todo Style/Documentation
+class AddUserIdToCapts < ActiveRecord::Migration[6.0]
+  def change
+    add_column :capts, :user_id, :integer
+  end
+end
+# rubocop:enable Style/Documentation
