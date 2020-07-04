@@ -29,53 +29,75 @@ class CaptsController < ApplicationController # rubocop:todo Style/Documentation
 
   # GET /capts/1/edit
 
-  def edit; end
+  def edit
+    @capt = Capt.find(params[:id]) 
+end
 
   # POST /capts
 
   # POST /capts.json
 
-  def create # rubocop:todo Metrics/AbcSize
-    @capt = current_user.capts.build(capt_params)
+  # def create # rubocop:todo Metrics/AbcSize
+  #   @capt = current_user.capts.build(capt_params)
 
-    respond_to do |format|
-      if @capt.save
+  #   respond_to do |format|
+  #     if @capt.save
 
-        format.html { redirect_to root_path, notice: 'Capt was successfully created.' }
+  #       format.html { redirect_to root_path, notice: 'Capt was successfully created.' }
 
-        format.json { render :show, status: :created, location: @capt }
+  #       format.json { render :show, status: :created, location: @capt }
 
-      else
+  #     else
 
-        format.html { render :new }
+  #       format.html { render :new }
 
-        format.json { render json: @capt.errors, status: :unprocessable_entity }
+  #       format.json { render json: @capt.errors, status: :unprocessable_entity }
 
-      end
-    end
-  end
+  #     end
+  #   end
+  # end
+
+  def create
+  @capt = Capt.new(article_params)
+   if @capt.save
+    flash[:notice] = 'Post was successfully created'
+    redirect_to capts_path(@capt)
+   else
+    render 'new'
+   end
+end
 
   # PATCH/PUT /capts/1
 
   # PATCH/PUT /capts/1.json
 
-  def update
-    respond_to do |format|
-      if @capt.update(capt_params)
+  # def update
+  #   respond_to do |format|
+  #     if @capt.update(capt_params)
 
-        format.html { redirect_to @capt, notice: 'Capt was successfully updated.' }
+  #       format.html { redirect_to @capt, notice: 'Capt was successfully updated.' }
 
-        format.json { render :show, status: :ok, location: @capt }
+  #       format.json { render :show, status: :ok, location: @capt }
 
-      else
+  #     else
 
-        format.html { render :edit }
+  #       format.html { render :edit }
 
-        format.json { render json: @capt.errors, status: :unprocessable_entity }
+  #       format.json { render json: @capt.errors, status: :unprocessable_entity }
 
-      end
+  #     end
+  #   end
+  # end
+
+def update
+    @capt = Capt.find(params[:id])
+    if @capt.update(capt_params)
+        flash[:notice] = "Post was successfully updated"
+        redirect_to capt_path(@capt)
+    else
+        render 'edit'
     end
-  end
+end
 
   # DELETE /capts/1
 
@@ -85,7 +107,7 @@ class CaptsController < ApplicationController # rubocop:todo Style/Documentation
     @capt.destroy
 
     respond_to do |format|
-      format.html { redirect_to capts_url, notice: 'Capt was successfully destroyed.' }
+      format.html { redirect_to capts_url, notice: 'Post was successfully destroyed.' }
 
       format.json { head :no_content }
     end
