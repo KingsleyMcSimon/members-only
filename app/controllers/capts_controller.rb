@@ -58,7 +58,7 @@ end
   # end
 
   def create
-  @capt = Capt.new(article_params)
+  @capt = Capt.new(capt_params)
    if @capt.save
     flash[:notice] = 'Post was successfully created'
     redirect_to capts_path(@capt)
