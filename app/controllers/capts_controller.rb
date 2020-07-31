@@ -16,9 +16,10 @@ class CaptsController < ApplicationController # rubocop:todo Style/Documentation
   def new
     @capt = current_user.capts.build
   end
-  
+
   def edit
-    @capt = Capt.find(params[:id]) 
+    @capt = Capt.find(params[:id])
+
 end
 
   def create
