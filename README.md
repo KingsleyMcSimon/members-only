@@ -36,9 +36,11 @@ Ruby On Rails, Bulma - a CSS framework.
 
 6. Ensure you bring up your rails application using 'rails server' and run 'rails generate scaffold (and the model you want to use, in my case i used Capt capt:text)' and then ran the 'rails db:migrate' command later to get started with the project.
 
-7. Install other necesary things that are needed for the project.
+7. yarn install --check-files  run this command in case you experienced webpack error in your application. 
 
-8. Add and commit your changes using your version control system known as git by running 'git init', then consolidate it with your consolidation system using either Github or Gitbucket, adding the remote repsitory you have created locally.
+8. Install other necesary things that are needed for the project.
+
+9. Add and commit your changes using your version control system known as git by running 'git init', then consolidate it with your consolidation system using either Github or Gitbucket, adding the remote repsitory you have created locally.
 
 # Contributing:
 

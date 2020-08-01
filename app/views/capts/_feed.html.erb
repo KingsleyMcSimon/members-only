@@ -1,18 +1,4 @@
-<div class="column is-half">
-<% if user_signed_in? %>
-<article class="media box">
-<figure class="media-left">
-<p class="image is-64x64">
-<%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
-</p>
-</figure>
-<div class="media-content">
-
-<%= render 'capts/form' %>
-
-</div>
-</article>
-<% end %>
+<%= user_info %>
 
 <% @capts.each do | capt | %>
 
@@ -29,23 +15,6 @@
     <small><%= capt.user.username %></small><br />
     <p><%= capt.capt %></p>
     </div>
-    <% if user_signed_in? && current_user.id == capt.user_id %>
-    <nav class="level">
-    <div class="level-left is-mobile">
-    <%= link_to capt, class: "level-item" do %>
-        <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
-        <% end %>
-        <%= link_to edit_capt_path(capt), class: "level-item" do %>
-            <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-            <% end %>
-                <%= link_to capt, method: :delete, data: { confirm: "Are you sure you want to delete this conversation?" } do %>
-                    <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
-                    <% end %>
-  				</div>
-  			</nav>
-        <% end %>
-  		</div>
-  	</article>
-  </div>
-<% end %>
+
+    <%= user_signed_in %>
 </div>
