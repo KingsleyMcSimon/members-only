@@ -8,7 +8,7 @@
 </figure>
 <div class="media-content">
 
-<%= render 'posts/form' %>
+<%= render 'capts/form' %>
 
 </div>
 </article>
@@ -20,7 +20,7 @@
     <article class="media">
     <div class="media-left">
     <figure class="image is-64x64">
-    <%= gravatar_image_tag(post.user.email, size: 64, alt: capt.user.name) %>
+    <%= gravatar_image_tag(capt.user.email, size: 64, alt: capt.user.name) %>
     </figure>
     </div>
     <div class="media-content">
