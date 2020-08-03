@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module CaptsHelper # rubocop:todo Style/Documentation
-     def user_info
-    render partial: 'user_info' if user_sign_in?
+     def user_info(capts)
+    render partial: 'user_info', capts: capts if user_sign_in?
   end
 
 def user_signed_in
