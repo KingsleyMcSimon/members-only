@@ -1,77 +1,40 @@
 # frozen_string_literal: true
 
 module CaptsHelper # rubocop:todo Style/Documentation
-#      def user_info(capts)
-#     render partial: 'user_info', capts: capts if user_sign_in?
-#   end
+def user_info
+    render partial: 'capts/_user_info', if user_signed_in?
+end
 
-# def user_signed_in
-#     render partial: 'user_info' if user_signed_in? && current_user.id == capt.user_id
-# end
+def new_user_info
+    render partial: 'capts/_user_info', if user_signed_in? && current_user.id == capt.user_id
+end
 
-# def signed_in
-# if user_signed_in?
-#   render partial: 'trends'
-# render 'profile'
-#  else
-#  render 'trends'
-# end
-# end
+def user_info_profile
 
-# def password_length
-#   render 'password_length'  if @minimum_password_length
-# end
+if user_signed_in?
 
-# def devise_mapping
-#   render 'devise_mapping' if devise_mapping.confirmable? && resource.pending_reconfirmation?
-# end
+# render partial: 'trends'
 
-# def minimum_password
-#   render 'minimum_password' if @minimum_password_length
-# end
+render 'profile'
+ else
+ render 'trends'
+end
+end
 
-# def remember_me
-#   render 'remember_me' if devise_mapping.rememberable?
-# end
+def flash_notice
+    render partial: '_flash_notice', if flash[:notice]
+end
 
-# def resource_errors
-#   render partial: 'resource_errors' if resource.errors.any?
-# end
+def flash_alert
+    render partial: '_flash_notice', if flash[:alert]
+end
 
-# def controller_name
-#   render 'controller_name' if controller_name != 'sessions'
-# end
+def user_informer
+    render partial: '_flash_notice', if user_signed_in?
+end
 
-# def registerable
-#   render 'registerable' if devise_mapping.registerable? && controller_name != 'registrations'
-# end
-
-# def recoverable
-#   render 'recoverable' if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-# end
-
-# def confirmable
-#   render 'confirmable'  if devise_mapping.confirmable? && controller_name != 'confirmations'
-# end
-
-# def lockable
-#   render 'lockable'  if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
-# end
-
-# def omniauthable
-#   render 'omniauthable' if devise_mapping.omniauthable?
-# end
-
-# def body_flash
-#   render partial: 'body_flash' if flash[:notice] 
-# end
-
-# def user_logged_in
-#   render partial: 'user_logged_in' if user_signed_in?
-# end
-
-# def object_errors
-#   render 'object_errors' if f.object.errors[:base].present?
-# end
+def object
+    render 'object', f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? 
+end
 
 end
