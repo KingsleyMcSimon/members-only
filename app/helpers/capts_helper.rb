@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-module CaptsHelper # rubocop:todo Style/Documentation
+module CaptsHelper # rubocop:todo Style/Documentation # frozen_string_literal: true
 def user_info
     render partial: 'capts/_user_info', if user_signed_in?
 end
@@ -12,9 +10,7 @@ end
 def user_info_profile
 
 if user_signed_in?
-
 # render partial: 'trends'
-
 render 'profile'
  else
  render 'trends'
@@ -36,5 +32,4 @@ end
 def object
     render 'object', f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? 
 end
-
 end
