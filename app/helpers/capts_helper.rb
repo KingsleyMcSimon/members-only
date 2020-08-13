@@ -1,35 +1,40 @@
-module CaptsHelper # rubocop:todo Style/Documentation # frozen_string_literal: true
+# frozen_string_literal: true
+module CaptsHelper # rubocop:todo Style/Documentation 
 def user_info
-    render partial: 'capts/_user_info', if user_signed_in?
+    render partial: 'capts/user_info' if user_signed_in?
 end
 
 def new_user_info
-    render partial: 'capts/_user_info', if user_signed_in? && current_user.id == capt.user_id
+    render partial: 'capts/user_info' if user_signed_in? && current_user.id == capt.user_id
 end
 
 def user_info_profile
 
 if user_signed_in?
-# render partial: 'trends'
-render 'profile'
- else
- render 'trends'
+    render 'profile'
+else
+render 'trends'
 end
 end
 
 def flash_notice
-    render partial: '_flash_notice', if flash[:notice]
+    if flash[:notice]
+
+    render partial: 'if_flash_notice' 
+else
+    render partial: 'else_flash_notice'
+end
 end
 
 def flash_alert
-    render partial: '_flash_notice', if flash[:alert]
+    render partial: 'flash_alert' if flash[:alert]
 end
 
 def user_informer
-    render partial: '_flash_notice', if user_signed_in?
+    render partial: 'else_flash_notice' if user_signed_in?
 end
 
-def object
-    render 'object', f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? 
+def object(f)
+    render partial: 'object', f: f if f.object.errors[:base].present? 
 end
 end

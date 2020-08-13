@@ -14,10 +14,6 @@
 
   <body>
 
-<%= flash_notice %>
-
-<%= flash_alert %>
-
 <nav class="navbar is-info">
 <div class="navbar-brand">
 <%= link_to root_path, class: "navbar-item" do %>
@@ -37,6 +33,10 @@
    <p class="control">
    <%= link_to 'New Post', root_path, class: "button is-info is-inverted" %>
  </p>
+
+<%= flash_notice %>
+
+<%= flash_alert %>
 
 <%= user_informer %>
 
