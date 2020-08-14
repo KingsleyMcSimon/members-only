@@ -37,4 +37,8 @@ end
 def object(f)
     render partial: 'object', f: f if f.object.errors[:base].present? 
 end
+
+def flash_signed_in
+    render partial: 'flash_signed_in' if user_signed_in?
+end
 end
