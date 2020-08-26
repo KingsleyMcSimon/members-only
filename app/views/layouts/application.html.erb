@@ -34,11 +34,14 @@
    <%= link_to 'New Post', root_path, class: "button is-info is-inverted" %>
  </p>
 
+ <%= flash_signed_in %>
+
 <%= flash_notice %>
 
-<%= flash_alert %>
+<div class="notification is-danger global-notification">
+<p class="alert"><%= alert %></p>
+</div>
 
-<%= user_informer %>
 
    </div>
    </div>

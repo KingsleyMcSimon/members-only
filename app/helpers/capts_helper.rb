@@ -41,4 +41,8 @@ end
 def flash_signed_in
     render partial: 'flash_signed_in' if user_signed_in?
 end
+
+def logout
+    render partial: 'logout' if destroy_user_session_path
+end
 end
