@@ -56,8 +56,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
-    addressable (2.7.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.1)
     autoprefixer-rails (9.8.4)
       execjs
@@ -169,7 +169,7 @@ GEM
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    public_suffix (4.0.5)
+    public_suffix (5.0.0)
     puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.2.3)
@@ -269,7 +269,6 @@ GEM
     unicode-display_width (1.7.0)
     warden (1.2.8)
       rack (>= 2.0.6)
-    wdm (0.1.1)
     web-console (4.0.3)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -320,7 +319,6 @@ DEPENDENCIES
   sqlite3
   turbolinks (~> 5)
   tzinfo-data
-  wdm (>= 0.1.0)
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
